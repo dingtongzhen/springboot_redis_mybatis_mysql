@@ -1,0 +1,23 @@
+server:
+  port: #端口号，默认不写就是8080
+  servlet:
+    context-path: /demo
+spring:
+  datasource:
+    username: root
+    password:
+    url: jdbc:mysql://192.168.111.129:13306/dingzhen?useUnicode=true&characterEncoding=UTF-8
+    driver-class-name: com.mysql.cj.jdbc.Driver #直接打mysql会有提示
+  redis:
+    database: 0
+    host: 192.168.111.129
+    port: 6379
+mybatis-plus:
+  type-aliases-package: com.dingzhen
+  mapperLocations: classpath:mappers/*.xml
+#showSql日志输出，根据自己的包名进行修改
+logging:
+  level:
+    com:
+      dingzhen:
+        mapper : debug
